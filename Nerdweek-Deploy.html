@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ice Cream Picker</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  </head>
+  <body>
+
+    <py-config>
+      packages = ["pandas", "numpy", "matplotlib"]
+    </py-config>
+
+    <py-script>
+		import pandas as pd
+		import matplotlib.pyplot as plt
+		#from pyodide.http import open_url
+
+		NerdWeek_Pageviews_DF = pd.read_csv("C:/Users/matbi/OneDrive/Área de Trabalho/NW LR deploy/nerdweek-pageviews.csv")
+		
+		plt.plot(NerdWeek_Pageviews_DF['Date'], NerdWeek_Pageviews_DF['Page Views']);
+    </py-script>
+
+    <div id="graph-area"></div>
+  </body>
+</html>
